@@ -58,10 +58,13 @@ def add_models(dir):
 
             screenshot = os.path.join(config.MODEL_GIT_DIR, model.model_id, model.code, "%s-%s-%d-screenshot.jpg" % (model.model_id, model.code, model.version))
             if not os.path.exists(screenshot):
-                print(" (warning: %s is missing)" % screenshot)
-            else:
-                print()
+                print(" (warning: %s is missing)" % screenshot, end="")
 
+            sfw = os.path.join(config.MODEL_GIT_DIR, model.model_id, model.code, "%s-%s-%d-screenshot-sfw.jpg" % (model.model_id, model.code, model.version))
+            if not os.path.exists(sfw):
+                print(" (warning: SFW %s is missing)" % screenshot, end="")
+
+            print()
 
 
 
